@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABAS/HOME</title>
+</head>
+<body>
+    <header> <!-- Cabeçalho!!! -->
+        <div class="menu-content"> 
+            <h1 class="logo">TABAS</h1> 
+            <nav class="header-menu"></nav> 
+            <ul class="list-itens"> 
+                <li><a href="#">APARTMENTS</a></li> 
+                <li><a href="#">PROPERTY OWNER</a></li>
+                <li><a href="#">CORPORATE</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">SUPPORT</a></li>
+                <li><a href="#">SING UP</a></li>
+                <li><a href="#">LOG IN</a></li>
+            </ul>
+        </div>
+    </header>
+    <main> <!-- Conteúdo principal/// -->
+        <div class="main-content">
+            <h1 class="primary-text">Your home wherever you are</h1>
+            <h2 class="second-text">Beautifully designed, fully furnished apartments in São Paulo, Rio de Janeiro and Brasília to make you feel at home</h2>
+            <div class="area">          
+                <div class="btns">  
+                    <button class="btn-personal"> <%= link_to 'Search', '/properties', class:"search" %> </button>
+                </div>
+            </div>
+        </div>
+    </main>    
+</body>
+</html>
+<style>    
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+html {
+    width: 100vw;  
+    height: 100vh;
+    font-size: 62.5%;
+    color: white   
+    background-image: asset_pa
+    }
+body{ 
+    background: linear-gradient(rgb(17, 17, 17, 0.1), rgba(20, 20, 20, 1)), url(<%= asset_path 'back2.jpg' %> );
+    background-position: center center;
+    background-size: cover;
+    background-position-y: 0px;
+    background-repeat: no-repeat;
+    }
+header{
+    width: 100%;
+    height: 9vh;
+    background: linear-gradient(rgb(17, 17, 20, 2.3), rgba(20, 20, 20, 0));
+    }
+.menu-content{
+    text-transform: uppercase;
+    height: 100%; 
+    display: flex; 
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    gap: 30px;
+    }
+.logo{
+    font-size: 1.8rem;
+    letter-spacing: 0.4rem; 
+    font-family: sans-serif;
+    margin-left: 30px; 
+    }
+.menu-content .list-itens{
+    display: flex; 
+    list-style: none; 
+    }
+.menu-content .list-itens a{
+    text-decoration: none; 
+    color: white;
+    padding: 1.2rem; 
+    transition: 2ms ease-in;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+.menu-content .list-itens a:before { 
+  content: ' '; 
+  position: absolute; 
+  bottom: 0; /*A posição que começa*/
+  left: 0;
+  width: 0px; 
+  border-radius: 40px;
+  height: 2px; 
+  background-color:rgb(3, 238, 255);
+  transition: all 0.5s ease;
+    }
+.menu-content .list-itens a:hover:before {
+    width: 100%;
+    }
+
+main {
+    height: 91vh; 
+    display: flex;              
+    align-items: center;
+    }
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;  
+    }
+@keyframes moveBanner {
+    0%{
+        transform: translateY(30rem) rotateY(-20deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+    }
+    }
+/* TEXTOS PRINCIPAIS */
+.primary-text{
+    width: 1550px;
+    font-size: 3.8rem;
+    margin-bottom: 4rem; 
+    text-align: center; 
+    font-family: monospace;
+    animation: moveBanner 2.5s;
+    color: white;
+    }
+.second-text{
+    margin-bottom: 5rem; 
+    font-size: 1.4rem;
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    animation: moveBanner 3.1s;
+    }
+    /* buttons*/
+.btns{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: moveBanner 3.7s;
+    padding: 6px;
+    padding-left: 270px;
+    }
+.btns button{
+    width: 130px;
+    height: 55px;
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(55, 50, 50);
+    font-weight: bold; /*Letra mais cheia*/
+    letter-spacing: 0.2rem;
+    border-radius: 50px;
+    transition: 0.3s;
+    }
+.btns button:hover{
+    height: 50px;
+    width: 140px;
+    transition: 0.3s;
+    background-color: rgba(245, 245, 220, 0.307);
+    border: 2px solid black;
+    color: black;
+    }
+.search:hover{
+    text-decoration: none;
+    color:black;
+    transition: 0.3s;
+    }
+.area {
+    background-color: aliceblue;
+    width: 400px;
+    height: 65px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 40px;
+    animation: moveBanner 4.7s;
+    }
+.search {
+    text-decoration: none;
+    color: white;
+    padding: 30px;
+    }
+</style>
