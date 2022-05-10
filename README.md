@@ -42,3 +42,5 @@ example: y = Property.new
         y.image1 = "lorem_ipsum.jpg"     Attention, the image files registered in the database must have 
         y.image2 = "lorem_ipsum.jpg"        the same name as the images moved to the assets/images folder.
         y.image3 = "lorem_ipsum.jpg"
+        
+        
